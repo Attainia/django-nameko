@@ -1,4 +1,5 @@
-from rpc import ClusterRpcProxyPool, get_pool, destroy_pool
+from .rpc import ClusterRpcProxyPool, get_pool, destroy_pool
+
 
 __all__ = [
     'ClusterRpcProxyPool',
