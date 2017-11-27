@@ -114,7 +114,7 @@ def get_pool():
     if not pool:
         # Lazy instantiation
         if not hasattr(settings, 'NAMEKO_CONFIG') or not settings.NAMEKO_CONFIG:
-            raise ImproperlyConfigured('NAMEKO_CONFIG must be specified and should include at least "AMQP_URL" key.')
+            raise ImproperlyConfigured('NAMEKO_CONFIG must be specified and should include at least "AMQP_URI" key.')
         pool = ClusterRpcProxyPool(settings.NAMEKO_CONFIG)
         pool.start()
     create_pool_lock.release()
